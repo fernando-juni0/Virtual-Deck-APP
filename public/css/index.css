@@ -1,0 +1,36 @@
+#containner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+#qrcode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#title-page{
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+#link-server-title,#qrcode-title,#title-page{
+    font-family: 'inter',sans-serif;
+    
+}
+#link-server-title,#qrcode-title{
+    font-size: 1em;
+    font-weight: 500;
+}
+#link-server{
+    padding: 1em;
+    font-family:'Courier New', Courier, monospace;
+    border: 1px solid #000;
+}
+#qrcode{
+    padding: 1em;
+    border: 1px solid #000;
+}

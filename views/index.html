@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirtualDeck</title>
+    <link rel="stylesheet" href="../public/css/index.css">
+</head>
+<body>
+    <div id="containner">
+        <div id="title-page">
+            <h1>Deixe a janela aberta para se comunicar com o site!</h1>
+        </div>
+        <div id="link-server-containner">
+            <div id="link-server-title">
+                <h2>Digite o link abaixo no site do VirtualDeck para se conectar a esse dispositivo!</h2>
+            </div>
+            <div id="link-server">test</div>
+        </div>
+        <div id="qrcode-containner">
+            <div id="qrcode-title">
+                <h2>Leia o QRCODE para se conectar diretamente a esse dispositivo!</h2>
+            </div>
+            <div id="qrcode"></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      window.electronAPI.receiveFromMain('res-link',(res)=>{
+        new QRCode(document.getElementById("qrcode"), `https://virtualdeck.fernandojunio.com.br/default/${res}`);
+
+        document.getElementById('link-server').innerText = res
+        document.getElementById('link-server').title = res
+      })
+
+    </script>
+    <script src="../public/js/index.js"></script>
+</body>
+</html>
